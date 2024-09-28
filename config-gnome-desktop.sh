@@ -11,7 +11,7 @@ usage() {
     echo "Usage: `basename $0` [OPTIONS]"
     echo "OPTIONS:"
     echo "-h, --help    Display this help message"
-    echo "-s, --scale   gnome text scaling"
+    echo "-s, --scaling   gnome text scaling"
 }
 
 # check for arguments following flag
@@ -27,11 +27,15 @@ extract_arg() {
 # take appropriate action
 take_action() {
     action=$1
-    val=$2
+    val=$2 if [[ $var =~ ^[+-]?[0-9]+$ ]]
     # echo "Action=$action"
     # echo "val=$val"
     case "${action}" in
         ${SET_TEXT_SCALING_FACTOR})
+        # check for integer and convert to float
+        if [[ $val =~ ^[+-]?[0-9]+$ ]]; then
+            val=$val.0
+        fi
         echo "Setting GNOME text scaling"
         # read current setting
         echo "Current setting: `dconf read /org/gnome/desktop/interface/text-scaling-factor`"
