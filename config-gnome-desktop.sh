@@ -5,11 +5,10 @@ TEXT_SCALING_FACTOR=1.5
 # functions
 
 # print script usage
-usage() {
-    echo ""
-    echo "-------------------------------"
+usage() {    
     echo "Usage: `basename $0` [OPTIONS]"
-    echo "OPTIONS:"
+    echo ""
+    echo "OPTIONS:"    
     echo "-h, --help    Display this help message"
     echo "-s, --scaling   gnome text scaling"
 }
@@ -59,6 +58,7 @@ parse_command() {
             -s | --scaling)
                 if  has_arg $@; then
                     echo "SYNTAX ERROR:Scaling not specified." >&2
+                    echo ""
                     usage
                     exit 1
                 fi
@@ -70,6 +70,7 @@ parse_command() {
             #default case
             *)
                 echo "SYNTAX ERROR:Invalid option \"$1\"" >&2
+                echo ""
                 usage
                 exit 1
                 ;;
