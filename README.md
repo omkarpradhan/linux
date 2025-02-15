@@ -37,6 +37,8 @@ Omkar Pradhan (omkarpradhan@gmail.com)
 
 [source link](https://www.linuxuprising.com/2021/08/how-to-enable-hibernation-on-ubuntu.html)
 
+[another link to steps](https://ubuntuhandbook.org/index.php/2021/08/enable-hibernate-ubuntu-21-10/#google_vignette)
+
 ### Swap file creationg/update
 Disable and remove current swap file (if any) and create a new swap file (if not already present). Size of swap file should be >= RAM\
 
